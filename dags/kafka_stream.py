@@ -16,7 +16,7 @@ default_args = {
 
 # Path to the CSV inside the Airflow container
 FILE_PATH = Path("/opt/airflow/data/kafka.csv")
-TOPIC      = "cisco_prices"
+TOPIC      = "Kafka streaming"
 BROKERS    = ["broker:29092"]
 
 
@@ -56,7 +56,7 @@ def stream_price_data() -> None:
 
 
 with DAG(
-    dag_id="cisco_price_stream",
+    dag_id="stream",
     default_args=default_args,
     schedule_interval="@daily",
     catchup=False,
@@ -64,6 +64,6 @@ with DAG(
 ) as dag:
 
     stream_to_kafka = PythonOperator(
-        task_id="stream_price_data",
-        python_callable=stream_price_data,
+        task_id="stream_data",
+        python_callable=stream_data,
     )
