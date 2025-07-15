@@ -31,8 +31,6 @@ Docker & Docker Compose
 
 Python (for Spark jobs and Airflow DAGs)
 
-Bash scripting (for entrypoint and setup scripts)
-
 # Project Structure
 dags/ — Airflow DAGs for workflow orchestration
 
@@ -46,18 +44,6 @@ data/ — Sample or test datasets for streaming
 
 requirements.txt — Python dependencies
 
-# Setup & Usage
-
-Clone the repo:
-git clone https://github.com/ShaikAmeena2990/Kafka_streaming_project.git
-
-Build and run the Docker containers:
-docker-compose up --build
-
-Access the Airflow UI (usually at http://localhost:8080) to monitor and trigger workflows.
-Kafka will stream data that Spark consumes and processes in real-time.
-Processed data is stored in Cassandra and can be queried as needed.
-
 # How it Works
 Kafka topics receive real-time data streams 
 
@@ -66,3 +52,15 @@ Spark Streaming reads data from Kafka topics, applies transformations or analyti
 Results are written to Cassandra for persistent storage.
 
 Airflow schedules and manages workflows to automate tasks such as data ingestion and processing.
+
+# Setup & Usage
+
+Clone the repo:
+git clone https://github.com/ShaikAmeena2990/kafkaproject.git
+
+Build and run the Docker containers:
+docker-compose up --build
+
+Access the Airflow UI (usually at http://localhost:8080) to monitor and trigger workflows.
+Kafka will stream data that Spark consumes and processes in real-time.
+Processed data is stored in Cassandra and can be queried as needed.
