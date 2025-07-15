@@ -15,7 +15,7 @@ def create_keyspace(session):
 
 def create_table(session):
     session.execute("""
-        CREATE TABLE IF NOT EXISTS spark_streams.cisco_prices (
+        CREATE TABLE IF NOT EXISTS spark_streams.cisco_price (
             id UUID PRIMARY KEY,
             timestamp TEXT,
             open DOUBLE,
