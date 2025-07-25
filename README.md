@@ -1,66 +1,67 @@
 # Kafka Streaming Project
 
-# Project Overview
+##  Project Overview
 This project implements a real-time data streaming pipeline using Apache Kafka, Apache Spark Streaming, and Cassandra. The pipeline ingests streaming data, processes it in near real-time with Spark, and stores the results in Cassandra for scalable storage and querying.
 
 The project also includes orchestration using Apache Airflow and is containerized using Docker for easy deployment.
 
-# Key Features
-Real-time data ingestion with Apache Kafka
+##  Key Features
 
-Stream processing and analytics using Apache Spark Streaming
+- Real-time data ingestion with Apache Kafka
 
-Scalable storage of processed data in Apache Cassandra
+- Stream processing and analytics using Apache Spark Streaming
 
-Workflow orchestration and scheduling via Apache Airflow
+- Scalable storage of processed data in Apache Cassandra
 
-Containerized environment using Docker and Docker Compose
+- Workflow orchestration and scheduling via Apache Airflow
 
-Includes ETL pipelines and fault-tolerant streaming design
+- Containerized environment using Docker and Docker Compose
 
-# Technologies Used
-Apache Kafka
+- Includes ETL pipelines and fault-tolerant streaming design
 
-Apache Spark Streaming
+##  Technologies Used
 
-Apache Cassandra
+- Apache Kafka
 
-Apache Airflow
+- Apache Spark Streaming
 
-Docker & Docker Compose
+- Apache Cassandra
 
-Python (for Spark jobs and Airflow DAGs)
+- Apache Airflow
 
-# Project Structure
-dags/ — Airflow DAGs for workflow orchestration
+- Docker & Docker Compose
 
-spark_stream.py — Spark Streaming job processing Kafka streams
+- Python (for Spark jobs and Airflow DAGs)
 
-docker-compose.yml — Docker Compose file to run Kafka, Zookeeper, Spark, Cassandra, Airflow, etc.
+## Project Structure
 
-script/entrypoint.sh — Script to initialize services inside Docker containers
+- dags/ — Airflow DAGs for workflow orchestration
 
-data/ — Sample or test datasets for streaming
+- spark_stream.py — Spark Streaming job processing Kafka streams
 
-requirements.txt — Python dependencies
+- docker-compose.yml — Docker Compose file to run Kafka, Zookeeper, Spark, Cassandra, Airflow, etc.
 
-# How it Works
-Kafka topics receive real-time data streams 
+- script/entrypoint.sh — Script to initialize services inside Docker containers
 
-Spark Streaming reads data from Kafka topics, applies transformations or analytics.
+- data/ — Sample or test datasets for streaming
 
-Results are written to Cassandra for persistent storage.
+- requirements.txt — Python dependencies
 
-Airflow schedules and manages workflows to automate tasks such as data ingestion and processing.
+##  How it Works
 
-# Setup & Usage
+- Kafka topics receive real-time data streams 
 
-Clone the repo:
+- Spark Streaming reads data from Kafka topics, applies transformations or analytics.
+
+- Results are written to Cassandra for persistent storage.
+
+- Airflow schedules and manages workflows to automate tasks such as data ingestion and processing.
+
+## Setup & Usage
+
+Clone the repo-
 git clone https://github.com/ShaikAmeena2990/kafkaproject.git
 
-Build and run the Docker containers:
+Build and run the Docker containers-
 docker-compose up --build
 
-Access the Airflow UI (usually at http://localhost:8080) to monitor and trigger workflows.
-Kafka will stream data that Spark consumes and processes in real-time.
-Processed data is stored in Cassandra and can be queried as needed.
